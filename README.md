@@ -3,7 +3,7 @@
 #### How to inital a Github Repo:
 ```python
 git init 
-git remote add origin reponame
+git remote add origin git@github.com:AndySongTech/Github_Command.git
 git push -u origin master
 ```
     
