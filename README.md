@@ -27,6 +27,7 @@ git branch -v
 git remote -v 
 git tag      # check all tag info 
 git tag tagname   # set a tag 
+git blame andy.txt # check who modified this file
 
 
 ```    
@@ -122,7 +123,65 @@ git revert commit_id # commit_id is like 029302c63663....
 Reset:
 git reset --hard HEAD^ # revert to last version, ^^ go back to version
 git reset --hard HEAD~n # going back n commits before HEAD
-git reset --hard commit_id # going back the dedicated version by commit_id
-Note: revert will keep the commit control version history, reset will not keep the version hhistory, but it can be find by 'git reflog' or '--keep'. A revert is the best choice for undoing changes
+git reset --hard commit_id # going back the specified version by commit_id
+Note: revert will keep the commit control version history, reset will not keep the version history, but it can be find by 'git reflog' or '--keep'. A revert is the best choice for undoing changes
 
 ``` 
+
+#### Checkout Version Shuttle(checkout 版本穿梭):
+```python
+git log or reflog # get the commit history
+git checkout commit_id # checkout to specified commit version
+Note: Don't suggest to change the pervious commit file. If you want to change file in pervious version, suggest to create a new branch.
+
+
+``` 
+
+#### How to rename branch:
+```python
+git branch -m master master2# -m stands for move/rename. 
+
+``` 
+
+#### Git Stash(保存现场): 
+```python
+git checkout -b newbranch
+touch andy.txt
+vim andy.txt 
+git add .
+git checkout master # this step will get error, you need to commit the change or stash the change
+git stash or
+git stash save ‘先保存再切换分支’
+git checkout master # checkout to other branch, and finish the job
+git checkout newbranch # checkout back to your branch
+git stash list # view the save version
+git stash pop # restore the last stash content, and will delete the stash version(view by git stash list)
+    git stash pop stash@{n} # restore the specified stash content
+git stash apply # restore the last stash content, but will keep the stash version(view by git stash list)
+    git stash drop stash@{0} # delete the stash history manually
+    git stash apply stash@{n} # restore the specified stash content
+
+``` 
+
+#### Git Tag: 
+```python
+tag is work for the whole project
+git tag # view tags
+git tag tagname # create a tag
+git tag -a V2.0 -m "first tag" # create a tag with comments
+git tag -d V2.0 # delete tag
+git tag -l 'V2.0' # query tag
+git tag -l 'V*'  # fuzzy query tag
+git blame andy.txt # check who modified this file
+
+```
+
+#### Git Diff: 
+```python
+git diff # 暂存区和工作区比较差异
+git diff commit_if # 对象区和工作区比较差异
+git diff HEAD # 最新的对象区和工作区比较差异
+git diff --cache commit_id # 对象取和暂存区比较差异
+git diff --cache HEAD # 最新的对象取和暂存区比较差异
+
+```
