@@ -3,9 +3,24 @@
 #### How to inital a Github Repo:
 ```python
 git init 
+git remote add origin git@github.com:Andy/Git_Command.git # add remote Github repo, origin is the alias of git@github.... You use another name, but it's not suggest.
+git push -u origin master # push local master to remote Github
+    if you use https you need to type the user name and password for authentication
+    if you use ssh you need below step.(recommended)
+        ssh-keygen -t rsa -b 4096 -C andy@github.com # generate a ssh key, it including public_key(id_rsa.pub) and private_key(id_rsa)
+        cd ~/.ssh
+        cat id_rsa.pub # copy the key
+        paste to Github. 
+            Use for one repo: go to repo -> Settings -> Deploy keys - add deploy key
+            Use for all repos: go to user profile-> Settings -> SSH and GPG keys->New SSH key
+```
+#### How to push the local commit to remote Github origin:
+```python
+git init 
 git remote add origin git@github.com:Andy/Git_Command.git
 git push -u origin master
 ```
+
 #### How to view/config repo info:
 ```python
 git status  # check repo status
@@ -25,6 +40,7 @@ git config –system -l     查看git系统级的配置信息
 git branch
 git branch -v
 git remote -v 
+git remote show origin # view remote repo info
 git tag      # check all tag info 
 git tag tagname   # set a tag 
 git blame andy.txt # check who modified this file
@@ -181,7 +197,7 @@ git blame andy.txt # check who modified this file
 git diff # 暂存区和工作区比较差异
 git diff commit_if # 对象区和工作区比较差异
 git diff HEAD # 最新的对象区和工作区比较差异
-git diff --cache commit_id # 对象取和暂存区比较差异
-git diff --cache HEAD # 最新的对象取和暂存区比较差异
+git diff --cache commit_id # 对象区和暂存区比较差异
+git diff --cache HEAD # 最新的对象区和暂存区比较差异
 
 ```
