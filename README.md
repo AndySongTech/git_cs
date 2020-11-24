@@ -14,12 +14,7 @@ git push -u origin master # push local master to remote Github
             Use for one repo: go to repo -> Settings -> Deploy keys - add deploy key
             Use for all repos: go to user profile-> Settings -> SSH and GPG keys->New SSH key
 ```
-#### How to push the local commit to remote Github origin:
-```python
-git init 
-git remote add origin git@github.com:Andy/Git_Command.git
-git push -u origin master
-```
+
 
 #### How to view/config repo info:
 ```python
