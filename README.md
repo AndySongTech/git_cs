@@ -45,6 +45,8 @@ git remote show origin # view remote repo info,
 git tag      # check all tag info 
 git tag tagname   # set a tag 
 git blame andy.txt # check who modified this file
+git config --global alias.ch checkout # set an alias for checkout command(store in ~/.gitconfig file)
+
 
 
 ``` 
@@ -126,7 +128,7 @@ git commit -m "Add a new file"
 git commit --amend -m "New comments"
 
 ``` 
-#### How to create/delete/checkout branch:
+#### How to create/delete/checkout local branch:
 ```python
 git branch --list
 git branch -v
@@ -137,6 +139,23 @@ git branch -D newbranch   # Force delete a branch igore the unmerge commit
 git merge newbranch   # Require checkout to master then meger branch to master
 
 ``` 
+#### How to delete remote branch:
+Way1: delete branch from Github protal
+Way2: delete by CLI
+```python
+git push origin source:destination # syntax
+git push origin :dev  # delete remote dev branch by empty source to replace remote branch
+or git push origin --delete dev
+
+``` 
+#### How to delete useless local tracking branch:
+
+```python
+git remote prune origin --dry-run # dryrun the useless branch
+git remote prune origin   # remove the useless branch
+
+``` 
+
 #### How to ignore a file and don't commit to remote:
 ```python
 cd ~/gitfolder
@@ -210,7 +229,13 @@ git tag -a V2.0 -m "first tag" # create a tag with comments
 git tag -d V2.0 # delete tag
 git tag -l 'V2.0' # query tag
 git tag -l 'V*'  # fuzzy query tag
-git blame andy.txt # check who modified this file
+git push origin v2.0 # Only push local tag to remote repo(releases)
+git push origin v3.0 v4.0 # push multi tags
+git push origin --tags # push all tags to remote repo
+git push origin refs/tags/v1.0:refs/tags/v1.0
+git pull # pull all the tags from remote to local
+git fetch origin tag v4.0 # fetch a specified tag from remote to local
+git push origin :refs/tags/v1.0 # remove remote tag v1.0
 
 ```
 
