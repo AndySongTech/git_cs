@@ -8,11 +8,11 @@ git push -u origin master # push local master to remote Github
     if you use https you need to type the user name and password for authentication
     if you use ssh you need below step.(recommended)
         ssh-keygen -t rsa -b 4096 -C andy@github.com # generate a ssh key, it including public_key(id_rsa.pub) and private_key(id_rsa)
-        cd ~/.ssh
+        cd ~/.ssh  # the dir that key located
         cat id_rsa.pub # copy the key
         paste to Github. 
-            Use for one repo: go to repo -> Settings -> Deploy keys - add deploy key
-            Use for all repos: go to user profile-> Settings -> SSH and GPG keys->New SSH key
+            Use for one Repo: go to Repo -> Settings -> Deploy keys - add deploy key
+            Use for all Repos: go to user profile-> Settings -> SSH and GPG keys->New SSH key
 ```
 
 
@@ -47,7 +47,8 @@ git tag tagname   # set a tag
 git blame andy.txt # check who modified this file
 
 
-```    
+``` 
+
 #### How to push a file to remote repo:
 ```python
 touch andy.txt
@@ -56,6 +57,26 @@ git add .
 git add -m "add a new file"
 git push orgin master
 ```
+
+#### How to push local branch to remote repo:
+```python
+git checkout -b new_branch #Create a new branch and chechout to that branch(equal to 'git branch new_branch & git checkout new_branch')
+touch andy.txt
+vim andy.txt
+git add .
+git add -m "add a new file"
+git push -u origin new_branch # push local new_branch to remote repo(origin)
+or git push --set-upstream origin new_branch
+```
+#### How to pull the remote branch to local repo:
+```python
+git pull # pull all the remote branch to local tracking branch
+git branch -av # check all the branches(local and local tracking)
+git checkout -b dev origin/dev # checkout tracking branch origin/dev to local branch dev
+or git checkout -b dev --track origin/dev
+or git checkout -b --track origin/dev # omit the name, will use default remote branck name
+```
+
 #### How to discard the change affer git add:
 ```python
 touch andy.txt
