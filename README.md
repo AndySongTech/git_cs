@@ -18,11 +18,14 @@ git push -u origin master # push local master to remote Github
 
 #### How to view/config repo info:
 ```python
-git status  # check repo status
+git clone git@github.com:Andy/Git_Command.git # download the remote repo to local
+git clone git@github.com:Andy/Git_Command.git repo_name  # create a repo name for download repo
+git status  # check local repo status if has anything changes(Check remote by 'git remote show origin')
 git diff    # check the diff between local and remote
 git show    
 git reflog   # check all the commit history
-git log    # view log
+git log    # view local log and commit_id(sha1)
+git log origin/master # view remote log and commit_id(sha1)
 git log -3  # view the latest 3 logs
 git log --graph  # view log by graph
 git log --graph --pretty=oneline --abbrev-commit # view the brief log by graph
@@ -34,8 +37,11 @@ git config –global -l     查看git全局级的配置信息
 git config –system -l     查看git系统级的配置信息
 git branch
 git branch -v
+git branch -a # list all the branchs including detached branch(游离分支)
+git branch -av
 git remote -v 
-git remote show origin # view remote repo info
+git remote show # Check remote server list
+git remote show origin # view remote repo info, 
 git tag      # check all tag info 
 git tag tagname   # set a tag 
 git blame andy.txt # check who modified this file
@@ -194,5 +200,6 @@ git diff commit_if # 对象区和工作区比较差异
 git diff HEAD # 最新的对象区和工作区比较差异
 git diff --cache commit_id # 对象区和暂存区比较差异
 git diff --cache HEAD # 最新的对象区和暂存区比较差异
+Note: git diff is only check the local repo info, not for check the diff between local and remote repo(check remote repo by 'git remote show origin')
 
 ```
