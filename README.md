@@ -19,10 +19,10 @@ git push -u origin master # push local master to remote Github
 #### How to view/config repo info:
 ```python
 git clone git@github.com:Andy/Git_Command.git # download the remote repo to local
-git clone git@github.com:Andy/Git_Command.git repo_name  # create a repo name for download repo
+git clone git@github.com:Andy/Git_Command.git repo_name  # set a repo name for download repo
 git status  # check local repo status if has anything changes(Check remote by 'git remote show origin')
-git diff    # check the diff between local and remote
-git show    
+git diff    # check the diff between local workspace and local cache
+git show    # Show various types of objects
 git reflog   # check all the commit history
 git log    # view local log and commit_id(sha1)
 git log origin/master # view remote log and commit_id(sha1)
@@ -35,13 +35,13 @@ git config --global user.email andy@example.com
 git config –local -l     查看git仓库级的配置信息
 git config –global -l     查看git全局级的配置信息
 git config –system -l     查看git系统级的配置信息
-git branch
-git branch -v
+git branch # view branch info
+git branch -v # v stands for verbose, view branch info and display commit id
 git branch -a # list all the branchs including detached branch(游离分支)
 git branch -av
 git remote -v 
 git remote show # Check remote server list
-git remote show origin # view remote repo info, 
+git remote show origin # view remote repo info 
 git tag      # check all tag info 
 git tag tagname   # set a tag 
 git blame andy.txt # check who modified this file
