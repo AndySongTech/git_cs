@@ -249,3 +249,34 @@ git diff --cache HEAD # 最新的对象区和暂存区比较差异
 Note: git diff is only check the local repo info, not for check the diff between local and remote repo(check remote repo by 'git remote show origin')
 
 ```
+
+#### Git merge & git rebase
+
+```python
+直接git merge: 
+git checkout -b dev
+git add .
+git commit -m "add new file"
+git checkout master
+git merge dev
+
+先git rebase 再 git merge:
+git checkout -b dev
+git commit -ad "add a new file"
+git rebase master
+git add .
+git rebase --continue
+git checkout master
+git merge dev
+
+总结
+git merge 操作合并分支会让两个分支的每一次提交都按照提交时间（并不是push时间）排序，并且会将两个分支的最新一次commit点进行合并成一个新的commit，最终的分支树呈现非整条线性直线的形式
+git rebase操作实际上是将当前执行rebase分支的所有基于原分支提交点之后的commit打散成一个一个的patch，并重新生成一个新的commit hash值，再次基于原分支目前最新的commit点上进行提交，并不根据两个分支上实际的每次提交的时间点排序，rebase完成后，切到基分支进行合并另一个分支时也不会生成一个新的commit点，可以保持整个分支树的完美线性
+另外值得一提的是，当我们开发一个功能时，可能会在本地有无数次commit，而你实际上在你的master分支上只想显示每一个功能测试完成后的一次完整提交记录就好了，其他的提交记录并不想将来全部保留在你的master分支上，那么rebase将会是一个好的选择，他可以在rebase时将本地多次的commit合并成一个commit，还可以修改commit的描述等
+最后
+如果你想要你的分支树呈现简洁，不罗嗦，线性的commit记录，那就采用rebase, 否则，就用merge吧
+
+参考链接：https://www.jianshu.com/p/6960811ac89c
+
+
+```
