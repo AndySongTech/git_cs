@@ -1,7 +1,7 @@
 ## Github Useful Commands
 ### 重要知识点
 #### How to inital a Github Repo:
-```git
+```python
 git init 
 git remote add origin git@github.com:Andy/Git_Command.git # add remote Github repo, origin is the alias of git@github.... You use another name, but it's not suggest.
 git push -u origin master # push local master to remote Github
