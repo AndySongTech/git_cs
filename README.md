@@ -1,5 +1,5 @@
 ## Github Useful Commands
-### 重要知识点
+
 #### How to inital a Github Repo:
 ```python
 git init 
