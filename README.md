@@ -58,7 +58,7 @@ git add -m "add a new file"
 git push orgin master
 ```
 
-#### How to push local branch to remote repo:
+#### How to push the local branch to the remote repo:
 ```python
 git checkout -b new_branch    #Create a new branch and chechout to that branch(equal to 'git branch new_branch & git checkout new_branch')
 touch andy.txt
@@ -77,7 +77,7 @@ or git checkout -b dev --track origin/dev
 or git checkout -b --track origin/dev # omit the name, will use default remote branck name
 ```
 
-#### How to discard the change affer git add:
+#### How to discard the change after git add:
 ```python
 touch andy.txt
 vim andy.txt
@@ -86,7 +86,7 @@ git restore --staged andy.txt
 rm andy.txt
 git status
 ``` 
-#### How to discard the change affer git commit:
+#### How to discard the change after git commit:
 ```python
 touch andy.txt
 vim andy.txt
@@ -95,7 +95,7 @@ git commit -m "Add a new file"
 git checkout . or git checkout -- andy.txt
 git status
 ``` 
-#### How to remove the file affer git commit:
+#### How to remove the file after git commit:
 ```python
 touch andy.txt
 vim andy.txt
@@ -105,7 +105,7 @@ git rm andy.txt
 git commit -m "delete andy.txt"
 git status
 ``` 
-#### How to discard the change affer git rm:
+#### How to discard the change after git rm:
 ```python
 touch andy.txt
 vim andy.txt
