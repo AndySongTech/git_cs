@@ -3,7 +3,7 @@
 #### How to inital a Github Repo:
 ```python
 git init 
-git remote add origin git@github.com:Andy/Git_Command.git # add remote Github repo, origin is the alias of git@github.... You use another name, but it's not suggest.
+git remote add origin git@github.com:Andy/Git_Command.git # add remote Github repo, origin is the alias of git@github.... You can use another name, but it's not suggest.
 git push -u origin master # push local master to remote Github
     if you use https you need to type the user name and password for authentication
     if you use ssh you need below step.(recommended)
@@ -30,24 +30,22 @@ git log -3  # view the latest 3 logs
 git log --graph  # view log by graph
 git log --graph --pretty=oneline --abbrev-commit # view the brief log by graph
 git config --list  # vew git config
-git config --global user.name "andy"    配置你本地Git的用户名 和邮箱
+git config --global user.name "andy"    # config your Global user_name and email 
 git config --global user.email andy@example.com
-git config –local -l     查看git仓库级的配置信息
-git config –global -l     查看git全局级的配置信息
-git config –system -l     查看git系统级的配置信息
-git branch # view branch info
-git branch -v # v stands for verbose, view branch info and display commit id
-git branch -a # list all the branchs including detached branch(游离分支)
+git config –local -l     # view git local level config info
+git config –global -l     # view git global level config info
+git config –system -l     # view git system level config info
+git branch     # view branch info
+git branch -v     # v stands for verbose, view branch info and display commit id
+git branch -a     # list all the branchs including detached branch(游离分支)
 git branch -av
-git remote -v 
-git remote show # Check remote server list
-git remote show origin # view remote repo info 
+git remote -v      # view remote branch info
+git remote show     # Check remote server list
+git remote show origin      # view remote repo info 
 git tag      # check all tag info 
-git tag tagname   # set a tag 
-git blame andy.txt # check who modified this file
-git config --global alias.ch checkout # set an alias for checkout command(store in ~/.gitconfig file)
-
-
+git tag tagname       # set a tag 
+git blame andy.txt    # check who modified this file
+git config --global alias.ch checkout     # set an alias for checkout command(store in ~/.gitconfig file)
 
 ``` 
 
@@ -62,19 +60,19 @@ git push orgin master
 
 #### How to push local branch to remote repo:
 ```python
-git checkout -b new_branch #Create a new branch and chechout to that branch(equal to 'git branch new_branch & git checkout new_branch')
+git checkout -b new_branch    #Create a new branch and chechout to that branch(equal to 'git branch new_branch & git checkout new_branch')
 touch andy.txt
 vim andy.txt
 git add .
 git add -m "add a new file"
-git push -u origin new_branch # push local new_branch to remote repo(origin)
+git push -u origin new_branch     # push local new_branch to remote repo(origin)
 or git push --set-upstream origin new_branch
 ```
 #### How to pull the remote branch to local repo:
 ```python
-git pull # pull all the remote branch to local tracking branch
-git branch -av # check all the branches(local and local tracking)
-git checkout -b dev origin/dev # checkout tracking branch origin/dev to local branch dev
+git pull     # pull all the remote branch to local tracking branch
+git branch -av      # check all the branches(local and local tracking)
+git checkout -b dev origin/dev     # checkout tracking branch origin/dev to local branch dev
 or git checkout -b dev --track origin/dev
 or git checkout -b --track origin/dev # omit the name, will use default remote branck name
 ```
@@ -143,7 +141,7 @@ git merge newbranch   # Require checkout to master then meger branch to master
 Way1: delete branch from Github protal
 Way2: delete by CLI
 ```python
-git push origin source:destination # syntax
+git push origin source:destination    # syntax
 git push origin :dev  # delete remote dev branch by empty source to replace remote branch
 or git push origin --delete dev
 
@@ -173,22 +171,22 @@ git merger --no-ff master # no fast forward
 #### How to rollback commit:
 ```python
 vim andy.txt
-git commit -am "add new file" # -am will add file then make the comments. Equal to (git add . + git commit -m "add new file"), but can not use for the first time after the file create. 
-git log # get the commit SHA1(commit_id)
+git commit -am "add new file"    # -am will add file then make the comments. Equal to (git add . + git commit -m "add new file"), but can not use for the first time after the file create. 
+git log      # get the commit SHA1(commit_id)
 Revert:
-git revert commit_id # commit_id is like 029302c63663....
+git revert commit_id     # commit_id is like 029302c63663....
 Reset:
-git reset --hard HEAD^ # revert to last version, ^^ go back to version
-git reset --hard HEAD~n # going back n commits before HEAD
-git reset --hard commit_id # going back the specified version by commit_id
+git reset --hard HEAD^      # revert to last version, ^^ go back to version
+git reset --hard HEAD~n     # going back n commits before HEAD
+git reset --hard commit_id    # going back the specified version by commit_id
 Note: revert will keep the commit control version history, reset will not keep the version history, but it can be find by 'git reflog' or '--keep'. A revert is the best choice for undoing changes
 
 ``` 
 
 #### Checkout Version Shuttle(checkout 版本穿梭):
 ```python
-git log or reflog # get the commit history
-git checkout commit_id # checkout to specified commit version
+git log or reflog     # get the commit history
+git checkout commit_id    # checkout to specified commit version
 Note: Don't suggest to change the pervious commit file. If you want to change file in pervious version, suggest to create a new branch.
 
 
@@ -196,7 +194,7 @@ Note: Don't suggest to change the pervious commit file. If you want to change fi
 
 #### How to rename branch:
 ```python
-git branch -m master master2# -m stands for move/rename. 
+git branch -m master master2.      # -m stands for move/rename. 
 
 ``` 
 
