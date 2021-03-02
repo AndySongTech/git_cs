@@ -133,7 +133,7 @@ git branch -v
 git branch newbrach   # Create a new branch
 git checkout -b newbrach  # Create a new branch and chechout to that branch
 git branch -d newbranch   # Delete a branch, but require merge commit first
-git branch -D newbranch   # Force delete a branch igore the unmerge commit
+git branch -D newbranch   # Force delete a branch ignore the unmerge commit
 git merge newbranch   # Require checkout to master then meger branch to master
 
 ``` 
@@ -149,8 +149,8 @@ or git push origin --delete dev
 #### How to delete useless local tracking branch:
 
 ```python
-git remote prune origin --dry-run # dryrun the useless branch
-git remote prune origin   # remove the useless branch
+git remote prune origin --dry-run   # dryrun the useless branch
+git remote prune origin     # remove the useless branch
 
 ``` 
 
@@ -158,13 +158,13 @@ git remote prune origin   # remove the useless branch
 ```python
 cd ~/gitfolder
 touch .gitignore
-vim .gitignore # Add file name to this file, it's also support wildcard.
-    andy.txt # ignore andy.txt file
-    *.txt # ignore all txt files
-    !.txt # ignore all the files except txt file
-    dir/* # ignore dir 
+vim .gitignore     # Add file name to this file, it's also support wildcard.
+    andy.txt       # ignore andy.txt file
+    *.txt          # ignore all txt files
+    !.txt          # ignore all the files except txt file
+    dir/*          # ignore dir 
     dir/*/*.txt
-    dir/**/*.txt # ** stands for all the subdir
+    dir/**/*.txt   # ** stands for all the subdir
 git merger --no-ff master # no fast forward
 
 ``` 
@@ -194,7 +194,7 @@ Note: Don't suggest to change the pervious commit file. If you want to change fi
 
 #### How to rename branch:
 ```python
-git branch -m master master2.      # -m stands for move/rename. 
+git branch -m master master2      # -m stands for move/rename. 
 
 ``` 
 
@@ -204,17 +204,17 @@ git checkout -b newbranch
 touch andy.txt
 vim andy.txt 
 git add .
-git checkout master # this step will get error, you need to commit the change or stash the change
+git checkout master   # this step will get error, you need to commit the change or stash the change
 git stash or
 git stash save ‘先保存再切换分支’
-git checkout master # checkout to other branch, and finish the job
-git checkout newbranch # checkout back to your branch
-git stash list # view the save version
-git stash pop # restore the last stash content, and will delete the stash version(view by git stash list)
-    git stash pop stash@{n} # restore the specified stash content
-git stash apply # restore the last stash content, but will keep the stash version(view by git stash list)
-    git stash drop stash@{0} # delete the stash history manually
-    git stash apply stash@{n} # restore the specified stash content
+git checkout master    # checkout to other branch, and finish the job
+git checkout newbranch    # checkout back to your branch
+git stash list     # view the save version
+git stash pop      # restore the last stash content, and will delete the stash version(view by git stash list)
+    git stash pop stash@{n}     # restore the specified stash content
+git stash apply      # restore the last stash content, but will keep the stash version(view by git stash list)
+    git stash drop stash@{0}     # delete the stash history manually
+    git stash apply stash@{n}    # restore the specified stash content
 
 ``` 
 
