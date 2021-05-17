@@ -178,6 +178,7 @@ git revert commit_id     # commit_id is like 029302c63663....
 Reset:
 git reset --hard HEAD^      # revert to last version, ^^ go back to version
 git reset --hard HEAD~n     # going back n commits before HEAD
+git reset --hard -f HEAD~4  # force move
 git reset --hard commit_id    # going back the specified version by commit_id
 Note: revert will keep the commit control version history, reset will not keep the version history, but it can be find by 'git reflog' or '--keep'. A revert is the best choice for undoing changes
 
