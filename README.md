@@ -279,3 +279,12 @@ git rebase操作实际上是将当前执行rebase分支的所有基于原分支�
 
 
 ```
+
+#### Rename the default branch from main to master(If you have a local clone, you can update it by running)
+```
+git branch -m main master
+git fetch origin
+git branch -u origin/master master
+git remote set-head origin -a
+
+```
