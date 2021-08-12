@@ -24,7 +24,7 @@ git status  # check local repo status if has anything changes(Check remote by 'g
 git diff    # check the diff between local workspace and local cache
 git show    # Show various types of objects
 git reflog   # check all the commit history
-git log    # view local log and commit_id(sha1)
+git log    # view local log and commit_id(sha1), will not display reset commit info
 git log origin/master # view remote log and commit_id(sha1)
 git log -3  # view the latest 3 logs
 git log --graph  # view log by graph
@@ -46,6 +46,7 @@ git tag      # check all tag info
 git tag tagname       # set a tag 
 git blame andy.txt    # check who modified this file
 git config --global alias.ch checkout     # set an alias for checkout command(store in ~/.gitconfig file)
+git log --graph --pretty=oneline --abbrev-commit  # pretty the commit log
 
 ``` 
 
@@ -241,6 +242,7 @@ git push origin :refs/tags/v1.0 # remove remote tag v1.0
 #### Git Diff: 
 ```python
 git diff # 暂存区和工作区比较差异
+git diff readme.md  # check the new change of the file
 git diff commit_if # 对象区和工作区比较差异
 git diff HEAD # 最新的对象区和工作区比较差异
 git diff --cache commit_id # 对象区和暂存区比较差异
@@ -288,3 +290,6 @@ git branch -u origin/master master
 git remote set-head origin -a
 
 ```
+
+
+Refer: https://www.liaoxuefeng.com/wiki/896043488029600
