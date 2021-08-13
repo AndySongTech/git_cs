@@ -290,6 +290,9 @@ git branch -u origin/master master
 git remote set-head origin -a
 
 ```
-
+#### Mix
+```
+git clone -b release-0.8 --single-branch git@github.com:prometheus-operator/kube-prometheus.git  # 指定下载版本
+```
 
 Refer: https://www.liaoxuefeng.com/wiki/896043488029600
