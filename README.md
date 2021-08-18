@@ -4,6 +4,7 @@
 ```python
 git init 
 git remote add origin git@github.com:Andy/Git_Command.git # add remote Github repo, origin is the alias of git@github.... You can use another name, but it's not suggest.
+git remote rm git@github.com:Andy/Git_Command.git  #remove remote git repo if you find the url is wrong.
 git push -u origin master # push local master to remote Github
     if you use https you need to type the user name and password for authentication
     if you use ssh you need below step.(recommended)
@@ -41,7 +42,8 @@ git branch -a     # list all the branchs including detached branch(游离分支)
 git branch -av
 git remote -v      # view remote branch info
 git remote show     # Check remote server list
-git remote show origin      # view remote repo info 
+git remote show origin      # view remote repo info
+git remote rm git@github.com:Andy/Git_Command.git  #remove remote git repo, but please use git remove -v to check info before that
 git tag      # check all tag info 
 git tag tagname       # set a tag 
 git blame andy.txt    # check who modified this file
