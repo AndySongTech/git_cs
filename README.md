@@ -292,6 +292,11 @@ git branch -u origin/master master
 git remote set-head origin -a
 
 ```
+#### Clean git cached for save repo data
+```
+git rm --cached template/charts
+
+```
 #### Mix
 ```
 git clone -b release-0.8 --single-branch git@github.com:prometheus-operator/kube-prometheus.git  # 指定下载版本
