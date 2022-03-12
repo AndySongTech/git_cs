@@ -49,6 +49,7 @@ git tag tagname       # set a tag
 git blame andy.txt    # check who modified this file
 git config --global alias.ch checkout     # set an alias for checkout command(store in ~/.gitconfig file)
 git log --graph --pretty=oneline --abbrev-commit  # pretty the commit log
+git remote set-url origin git@github.com:andy/k8s.git  # change the git remote url when the repo url is changed
 
 ``` 
 
