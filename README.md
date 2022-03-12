@@ -50,6 +50,10 @@ git blame andy.txt    # check who modified this file
 git config --global alias.ch checkout     # set an alias for checkout command(store in ~/.gitconfig file)
 git log --graph --pretty=oneline --abbrev-commit  # pretty the commit log
 git remote set-url origin git@github.com:andy/k8s.git  # change the git remote url when the repo url is changed
+git remote -r  # list remote branch list 
+git remote -a   # list all remote branch
+git branch -v -a  # v abbrev list all remote branch with abbrev of commit
+git checkout renovate/github.com-spf13-viper-1.2  # switch to one branch
 
 ``` 
 
