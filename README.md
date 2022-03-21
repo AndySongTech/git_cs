@@ -252,8 +252,8 @@ git diff # 暂存区和工作区比较差异
 git diff readme.md  # check the new change of the file
 git diff commit_if # 对象区和工作区比较差异
 git diff HEAD # 最新的对象区和工作区比较差异
-git diff --cache commit_id # 对象区和暂存区比较差异
-git diff --cache HEAD # 最新的对象区和暂存区比较差异
+git diff --cached commit_id # 对象区和暂存区比较差异
+git diff --cached HEAD # 最新的对象区和暂存区比较差异
 Note: git diff is only check the local repo info, not for check the diff between local and remote repo(check remote repo by 'git remote show origin')
 
 ```
