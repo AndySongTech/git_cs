@@ -63,7 +63,18 @@ touch andy.txt
 vim andy.txt
 git add .
 git add -m "add a new file"
-git push orgin master
+git push origin master
+```
+
+#### How to make a pull request
+```
+git clone git@github.com:andysongtech/repo.git
+git checkout -b andy/dev
+make change
+git add .
+git commit -m "add your comments"
+git push origin andy/dev 
+
 ```
 
 #### How to push the local branch to the remote repo:
