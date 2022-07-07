@@ -254,7 +254,11 @@ git push origin refs/tags/v1.0:refs/tags/v1.0
 git pull # pull all the tags from remote to local
 git fetch origin tag v4.0 # fetch a specified tag from remote to local
 git push origin :refs/tags/v1.0 # remove remote tag v1.0
-
+# create tags for sync route53 state
+git checkout rc
+git pull --rebase
+git tag v0.1.6
+git push --tags
 ```
 
 #### Git Diff: 
