@@ -322,4 +322,11 @@ git rm --cached template/charts
 git clone -b release-0.8 --single-branch git@github.com:prometheus-operator/kube-prometheus.git  # 指定下载版本
 ```
 
+#### git-open
+Install git-open from Homebrew
+```
+brew install git-open
+```
+Github refer: https://github.com/paulirish/git-open
+
 Refer: https://www.liaoxuefeng.com/wiki/896043488029600
