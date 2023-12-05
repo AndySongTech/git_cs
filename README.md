@@ -56,7 +56,16 @@ git branch -v -a  # v abbrev list all remote branch with abbrev of commit
 git checkout renovate/github.com-spf13-viper-1.2  # switch to one branch
 
 ``` 
-
+#### Initial a local git and push to remote
+```git
+vim andy.yaml
+git init
+git add .
+git commit -n "add andy.yaml"
+git branch -M main
+git remote add git@github.com:AndySongTech/Linux.git
+git push -u origin main
+```
 #### How to push a file to remote repo:
 ```python
 touch andy.txt
