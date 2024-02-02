@@ -36,10 +36,11 @@ git config --global user.email andy@example.com
 git config –local -l     # view git local level config info
 git config –global -l     # view git global level config info
 git config –system -l     # view git system level config info
-git branch     # view branch info
-git branch -v     # v stands for verbose, view branch info and display commit id
-git branch -a     # list all the branchs including detached branch(游离分支)
-git branch -av
+git branch     # view local branch info
+git branch -v     # v stands for verbose, view local branch info and display commit id
+git branch -a     # list all the branchs including detached branch(游离分支)/local/remote branch
+git branch -av    # v abbrev list all remote branch with abbrev of commit
+git remote -r     # list remote branch list, not including loca branch 
 git remote -v      # view remote branch info
 git remote show     # Check remote server list
 git remote show origin      # view remote repo info
@@ -50,11 +51,10 @@ git blame andy.txt    # check who modified this file
 git config --global alias.ch checkout     # set an alias for checkout command(store in ~/.gitconfig file)
 git log --graph --pretty=oneline --abbrev-commit  # pretty the commit log
 git remote set-url origin git@github.com:andy/k8s.git  # change the git remote url when the repo url is changed
-git remote -r  # list remote branch list 
-git remote -a   # list all remote branch
-git branch -v -a  # v abbrev list all remote branch with abbrev of commit
 git checkout renovate/github.com-spf13-viper-1.2  # switch to one branch
-
+git fetch origin  # it only downloads the changes made in the remote repository to your local repository without automatically merging them with your work or modifying what you are currently working on. You will need to merge the changes manually when you are ready. git pull will auto merge the change to local
+git fetch remote-branch   # download remote-branch
+git fetch remote-branch tag 4.0   #fetch a specified tag from remote to local
 ``` 
 #### Initial a local git and push to remote
 ```git
