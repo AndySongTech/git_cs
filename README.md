@@ -309,8 +309,24 @@ git rebase操作实际上是将当前执行rebase分支的所有基于原分支�
 如果你想要你的分支树呈现简洁，不罗嗦，线性的commit记录，那就采用rebase, 否则，就用merge吧
 
 参考链接：https://www.jianshu.com/p/6960811ac89c
-
-
+```
+#### Fix conflicts
+```sh
+git checkout your_branch_name
+git fetch origin
+git rebase origin/master
+fix conflicts
+git add .
+git rebase --continue
+add comments in vim 
+git push origin your_branch_name --force
+```
+Hint:
+```sh
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
 ```
 
 #### Rename the default branch from main to master(If you have a local clone, you can update it by running)
